@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator</title>
+</head>
+<body>
+
+<h3>Suma 3 liczb</h3>
+<input id="a1">
+<input id="b1">
+<input id="c1">
+<button onclick="oblicz1()">Oblicz</button>
+<p id="wynik1"></p>
+
+<h3>Średnia</h3>
+<input id="a2">
+<input id="b2">
+<input id="c2">
+<button onclick="oblicz2()">Oblicz</button>
+<p id="wynik2"></p>
+
+<h3>Działania na 2 liczbach</h3>
+<input id="a3">
+<input id="b3">
+<button onclick="oblicz3()">Oblicz</button>
+<p id="wynik3"></p>
+
+<h3>Pierwiastek</h3>
+<input id="a4">
+<button onclick="oblicz4()">Oblicz</button>
+<p id="wynik4"></p>
+
+<h3>Pole kwadratu</h3>
+<input id="a5">
+<button onclick="oblicz5()">Oblicz</button>
+<p id="wynik5"></p>
+
+<h3>Pole prostopadłościanu</h3>
+<input id="a6">
+<input id="b6">
+<input id="c6">
+<button onclick="oblicz6()">Oblicz</button>
+<p id="wynik6"></p>
+
+<h3>Koło</h3>
+<input id="r7">
+<button onclick="oblicz7()">Oblicz</button>
+<p id="wynik7"></p>
+
+<h3>Koszt paliwa (stałe dane)</h3>
+<input id="cena8">
+<button onclick="oblicz8()">Oblicz</button>
+<p id="wynik8"></p>
+
+<h3>Koszt paliwa (dane użytkownika)</h3>
+<input id="cena9">
+<input id="trasa9">
+<input id="spalanie9">
+<button onclick="oblicz9()">Oblicz</button>
+<p id="wynik9"></p>
+
+<h3>Zysk z inwestycji</h3>
+<input id="kwota10">
+<button onclick="oblicz10()">Oblicz</button>
+<p id="wynik10"></p>
+
+<script>
+function oblicz1() {
+  let a = Number(document.getElementById("a1").value)
+  let b = Number(document.getElementById("b1").value)
+  let c = Number(document.getElementById("c1").value)
+  let suma = a + b + c
+  document.getElementById("wynik1").innerHTML = suma
+}
+
+function oblicz2() {
+  let a = Number(document.getElementById("a2").value)
+  let b = Number(document.getElementById("b2").value)
+  let c = Number(document.getElementById("c2").value)
+  let srednia = (a + b + c) / 3
+  document.getElementById("wynik2").innerHTML = srednia
+}
+
+function oblicz3() {
+  let a = Number(document.getElementById("a3").value)
+  let b = Number(document.getElementById("b3").value)
+  let suma = a + b
+  let roznica = a - b
+  let iloczyn = a * b
+  document.getElementById("wynik3").innerHTML = suma + "<br>" + roznica + "<br>" + iloczyn
+}
+
+function oblicz4() {
+  let a = Number(document.getElementById("a4").value)
+  let wynik = Math.sqrt(a)
+  document.getElementById("wynik4").innerHTML = wynik
+}
+
+function oblicz5() {
+  let a = Number(document.getElementById("a5").value)
+  let pole = a * a
+  document.getElementById("wynik5").innerHTML = pole
+}
+
+function oblicz6() {
+  let a = Number(document.getElementById("a6").value)
+  let b = Number(document.getElementById("b6").value)
+  let c = Number(document.getElementById("c6").value)
+  let pole = 2 * (a*b + a*c + b*c)
+  document.getElementById("wynik6").innerHTML = pole
+}
+
+function oblicz7() {
+  let r = Number(document.getElementById("r7").value)
+  let pole = Math.PI * r * r
+  let obwod = 2 * Math.PI * r
+  document.getElementById("wynik7").innerHTML = pole + "<br>" + obwod
+}
+
+function oblicz8() {
+  let cena = Number(document.getElementById("cena8").value)
+  let paliwo = 360 * 8 / 100
+  let koszt = paliwo * cena
+  document.getElementById("wynik8").innerHTML = koszt
+}
+
+function oblicz9() {
+  let cena = Number(document.getElementById("cena9").value)
+  let trasa = Number(document.getElementById("trasa9").value)
+  let spalanie = Number(document.getElementById("spalanie9").value)
+  let paliwo = trasa * spalanie / 100
+  let koszt = paliwo * cena
+  document.getElementById("wynik9").innerHTML = koszt
+}
+
+function oblicz10() {
+  let kwota = Number(document.getElementById("kwota10").value)
+  let zysk = kwota * 0.08
+  let podatek = zysk * 0.19
+  let czystyZysk = zysk - podatek
+  document.getElementById("wynik10").innerHTML = czystyZysk
+}
+</script>
+
+</body>
+</html>
